@@ -87,6 +87,13 @@ Here is a visual breakdown of the pipeline architecture, SSIS packages, and data
       <img src="./Docs/Star Schema.png" alt="Star Schema" width="100%">
     </td>
   </tr>
+</table>
+
+---
+
+### 3. Power BI & Dashboards
+
+<table border="0">
   <tr>
     <td width="50%" align="center">
       <b>First Report</b><br>
