@@ -1,0 +1,1891 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/27/2026 4:31:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MOHAMED"
+  DTS:CreatorName="MOHAMED\test4"
+  DTS:DTSID="{92013118-083E-4F78-87BC-7216D6F51318}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Extract_To_Staging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{3821BBCE-996B-43C5-A798-6E175AFADCF4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D54D5317-3197-4311-8C2E-2B0023A5C4F9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\datasets\data_csv\yellow_tripdata_2024_01.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VendorID"
+              DTS:DTSID="{D61FA61F-698F-4E08-85E6-4772FD202F2D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tpep_pickup_datetime"
+              DTS:DTSID="{C1126BEA-E64A-4DB4-B893-5D031E6502C7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tpep_dropoff_datetime"
+              DTS:DTSID="{1B9A50EB-F18D-4893-9168-AD37ECD88B73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="passenger_count"
+              DTS:DTSID="{A6D3431B-A129-4570-98C3-E6236BE4A631}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="trip_distance"
+              DTS:DTSID="{B43E7492-0301-4428-ACF5-BC40EE35237A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RatecodeID"
+              DTS:DTSID="{010ECE0D-D89A-4290-80EF-3E62C589ACB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="store_and_fwd_flag"
+              DTS:DTSID="{19DF396D-3596-4215-A287-BA424AC9806A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PULocationID"
+              DTS:DTSID="{CD8DD6D8-BD16-4D13-B90C-FAD6F9BF051D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DOLocationID"
+              DTS:DTSID="{C34EC26B-0296-4B20-9043-A34D1666BF80}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="payment_type"
+              DTS:DTSID="{3D6488FA-663B-4C94-BD58-8EE77BBAB052}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fare_amount"
+              DTS:DTSID="{D5913C33-CBBD-4112-BB9A-3BEE3BDC70A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="extra"
+              DTS:DTSID="{8E2A9FAE-4E24-4541-8433-49EEFCA97C14}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mta_tax"
+              DTS:DTSID="{94154553-0235-411D-AB2B-35876123C2B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tip_amount"
+              DTS:DTSID="{56AD9493-1C48-4549-9E54-FC2C478DFF05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tolls_amount"
+              DTS:DTSID="{7AD1EBC1-751C-4024-BC4E-E115F1C34022}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="improvement_surcharge"
+              DTS:DTSID="{E6F0F511-70A0-4874-A9E8-B1929DAB4147}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="total_amount"
+              DTS:DTSID="{FE63A60B-0615-4275-899D-64AF9C00F028}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="congestion_surcharge"
+              DTS:DTSID="{75D5C7CC-9B24-4B2A-B93E-D307FB1F9BB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Airport_fee"
+              DTS:DTSID="{26ADD29F-D52C-4CF7-9AD0-6559993C7F11}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{756D8436-E4BC-48A1-B9D9-C7E78C4A82F1}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\datasets\data_csv\taxi_zone_lookup.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;LocationID&quot;"
+              DTS:DTSID="{E5844562-AA15-4554-BB6B-3B32ABD5E681}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Borough&quot;"
+              DTS:DTSID="{701B6F45-55B0-4141-B339-2BA344FCA387}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Zone&quot;"
+              DTS:DTSID="{BE612590-BB1C-4BDA-AC3C-0475D7630C9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;service_zone&quot;"
+              DTS:DTSID="{9099D012-7AB7-4538-8273-1232A97786E8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NYC_Taxi_Warehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F0FA68B1-127D-40B6-BCC4-A5A555AB08CF}"
+      DTS:ObjectName="NYC_Taxi_Warehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=;User ID=;Initial Catalog=NYC_Taxi_Warehouse;Provider=MSOLEDBSQL19.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Host Name In Certificate=;Server Certificate=;Application Name=SSIS-Package-{F0FA68B1-127D-40B6-BCC4-A5A555AB08CF}NYC_Taxi_Warehouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FA824C43-B14E-499C-8D1C-6D0AD5A300BE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F0FA68B1-127D-40B6-BCC4-A5A555AB08CF}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE STG_Yellow_Trips;&#xA;TRUNCATE TABLE STG_Taxi_Zones;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\STG_Taxi_Zones"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8B444CDB-8515-4022-8866-14CF8C88FDD4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STG_Taxi_Zones"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\STG_Taxi_Zones\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STG_Taxi_Zones\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;LocationID&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;LocationID&quot;]"
+                      length="50"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;LocationID&quot;]"
+                      name="&quot;LocationID&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Borough&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Borough&quot;]"
+                      length="50"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Borough&quot;]"
+                      name="&quot;Borough&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Zone&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Zone&quot;]"
+                      length="50"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Zone&quot;]"
+                      name="&quot;Zone&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;service_zone&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;service_zone&quot;]"
+                      length="50"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;service_zone&quot;]"
+                      name="&quot;service_zone&quot;"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;LocationID&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;LocationID&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Borough&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Borough&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Zone&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;Zone&quot;" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;service_zone&quot;]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="&quot;service_zone&quot;" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STG_Taxi_Zones\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[STG_Taxi_Zones]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STG_Taxi_Zones\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NYC_Taxi_Warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[NYC_Taxi_Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;LocationID&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;LocationID&quot;"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;LocationID&quot;]" />
+                    <inputColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;Borough&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Borough&quot;"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Borough]"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Borough&quot;]" />
+                    <inputColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;Zone&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;Zone&quot;"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Zone]"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Zone&quot;]" />
+                    <inputColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;service_zone&quot;]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="&quot;service_zone&quot;"
+                      externalMetadataColumnId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[service_zone]"
+                      lineageId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;service_zone&quot;]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LocationID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Borough]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Borough" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Zone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Zone" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[service_zone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="service_zone" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STG_Taxi_Zones\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STG_Taxi_Zones\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STG_Taxi_Zones\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STG_Taxi_Zones\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\STG_Taxi_Zones.Paths[Flat File Source Output]"
+              endId="Package\STG_Taxi_Zones\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\STG_Taxi_Zones\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\STG_Yellow_Trips"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0A485604-20F4-4EA3-8A6E-57683579CFF4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STG_Yellow_Trips"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\STG_Yellow_Trips\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STG_Yellow_Trips\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[VendorID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VendorID]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[VendorID]"
+                      name="VendorID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tpep_pickup_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tpep_pickup_datetime]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tpep_pickup_datetime]"
+                      name="tpep_pickup_datetime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tpep_dropoff_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tpep_dropoff_datetime]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tpep_dropoff_datetime]"
+                      name="tpep_dropoff_datetime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[passenger_count]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]"
+                      name="passenger_count"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[trip_distance]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[trip_distance]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[trip_distance]"
+                      name="trip_distance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[RatecodeID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RatecodeID]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[RatecodeID]"
+                      name="RatecodeID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[store_and_fwd_flag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[store_and_fwd_flag]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[store_and_fwd_flag]"
+                      name="store_and_fwd_flag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[PULocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PULocationID]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[PULocationID]"
+                      name="PULocationID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[DOLocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DOLocationID]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[DOLocationID]"
+                      name="DOLocationID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[payment_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_type]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[payment_type]"
+                      name="payment_type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[fare_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[fare_amount]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[fare_amount]"
+                      name="fare_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[extra]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[extra]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[extra]"
+                      name="extra"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[mta_tax]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mta_tax]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[mta_tax]"
+                      name="mta_tax"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tip_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tip_amount]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tip_amount]"
+                      name="tip_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tolls_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tolls_amount]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tolls_amount]"
+                      name="tolls_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[improvement_surcharge]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[improvement_surcharge]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[improvement_surcharge]"
+                      name="improvement_surcharge"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[total_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_amount]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[total_amount]"
+                      name="total_amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[congestion_surcharge]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[congestion_surcharge]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[congestion_surcharge]"
+                      name="congestion_surcharge"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[Airport_fee]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Airport_fee]"
+                      length="50"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[Airport_fee]"
+                      name="Airport_fee"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VendorID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VendorID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tpep_pickup_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tpep_pickup_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tpep_dropoff_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tpep_dropoff_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[passenger_count]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="passenger_count" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[trip_distance]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="trip_distance" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[RatecodeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RatecodeID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[store_and_fwd_flag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_and_fwd_flag" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PULocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PULocationID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DOLocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOLocationID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[payment_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="payment_type" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[fare_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fare_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[extra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="extra" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[mta_tax]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="mta_tax" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tip_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tip_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tolls_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tolls_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[improvement_surcharge]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="improvement_surcharge" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[total_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[congestion_surcharge]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="congestion_surcharge" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Airport_fee]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Airport_fee" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\STG_Yellow_Trips\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[STG_Yellow_Trips]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\STG_Yellow_Trips\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NYC_Taxi_Warehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[NYC_Taxi_Warehouse]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VendorID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VendorID"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorID]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[VendorID]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tpep_pickup_datetime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tpep_pickup_datetime"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tpep_pickup_datetime]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tpep_pickup_datetime]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tpep_dropoff_datetime]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tpep_dropoff_datetime"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tpep_dropoff_datetime]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tpep_dropoff_datetime]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[passenger_count]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="passenger_count"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[passenger_count]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[passenger_count]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[trip_distance]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="trip_distance"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trip_distance]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[trip_distance]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RatecodeID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RatecodeID"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RatecodeID]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[RatecodeID]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[store_and_fwd_flag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="store_and_fwd_flag"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_and_fwd_flag]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[store_and_fwd_flag]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PULocationID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PULocationID"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PULocationID]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[PULocationID]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DOLocationID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DOLocationID"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DOLocationID]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[DOLocationID]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[payment_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="payment_type"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[payment_type]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[fare_amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fare_amount"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fare_amount]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[fare_amount]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[extra]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="extra"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[extra]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[extra]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[mta_tax]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="mta_tax"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mta_tax]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[mta_tax]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tip_amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tip_amount"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tip_amount]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tip_amount]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tolls_amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tolls_amount"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tolls_amount]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[tolls_amount]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[improvement_surcharge]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="improvement_surcharge"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[improvement_surcharge]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[improvement_surcharge]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[total_amount]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="total_amount"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_amount]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[total_amount]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[congestion_surcharge]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="congestion_surcharge"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[congestion_surcharge]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[congestion_surcharge]" />
+                    <inputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Airport_fee]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Airport_fee"
+                      externalMetadataColumnId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Airport_fee]"
+                      lineageId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output].Columns[Airport_fee]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VendorID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tpep_pickup_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tpep_pickup_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tpep_dropoff_datetime]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tpep_dropoff_datetime" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[passenger_count]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="passenger_count" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[trip_distance]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="trip_distance" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RatecodeID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RatecodeID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_and_fwd_flag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="store_and_fwd_flag" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PULocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PULocationID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DOLocationID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DOLocationID" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[payment_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="payment_type" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fare_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fare_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[extra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="extra" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[mta_tax]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="mta_tax" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tip_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tip_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tolls_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tolls_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[improvement_surcharge]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="improvement_surcharge" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_amount]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="total_amount" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[congestion_surcharge]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="congestion_surcharge" />
+                    <externalMetadataColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Airport_fee]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Airport_fee" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\STG_Yellow_Trips\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\STG_Yellow_Trips\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\STG_Yellow_Trips\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\STG_Yellow_Trips\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\STG_Yellow_Trips.Paths[Flat File Source Output]"
+              endId="Package\STG_Yellow_Trips\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\STG_Yellow_Trips\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3018AC13-0223-469B-B84B-11AF9B63F36B}"
+      DTS:From="Package\Extract data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\STG_Yellow_Trips" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{34C178B2-1CEB-481D-852A-A9E7EDD9C08E}"
+      DTS:From="Package\Extract data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\STG_Taxi_Zones" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Extract data"
+          TopLeft="538,43" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\STG_Yellow_Trips"
+          TopLeft="337,160" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="584.666666666667,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-158.666666666667,75"
+              Start="0,0"
+              End="-158.666666666667,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5232558139535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5232558139535"
+                    Point2="0,30.5232558139535"
+                    Point3="-4,30.5232558139535" />
+                  <mssgle:LineSegment
+                    End="-154.666666666667,30.5232558139535" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-154.666666666667,30.5232558139535"
+                    Point2="-158.666666666667,30.5232558139535"
+                    Point3="-158.666666666667,34.5232558139535" />
+                  <mssgle:LineSegment
+                    End="-158.666666666667,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\STG_Taxi_Zones"
+          TopLeft="673,159" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="627.333333333333,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.666666666667,74"
+              Start="0,0"
+              End="124.666666666667,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1162790697674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.1162790697674"
+                    Point2="0,30.1162790697674"
+                    Point3="4,30.1162790697674" />
+                  <mssgle:LineSegment
+                    End="120.666666666667,30.1162790697674" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.666666666667,30.1162790697674"
+                    Point2="124.666666666667,30.1162790697674"
+                    Point3="124.666666666667,34.1162790697674" />
+                  <mssgle:LineSegment
+                    End="124.666666666667,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\STG_Yellow_Trips">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\STG_Yellow_Trips\Flat File Source"
+          TopLeft="546,73" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STG_Yellow_Trips\OLE DB Destination"
+          TopLeft="526,226" />
+        <EdgeLayout
+          Id="Package\STG_Yellow_Trips.Paths[Flat File Source Output]"
+          TopLeft="621.5,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10,111"
+              Start="0,0"
+              End="-10,103.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.5"
+                    Point2="0,55.5"
+                    Point3="-4,55.5" />
+                  <mssgle:LineSegment
+                    End="-6,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6,55.5"
+                    Point2="-10,55.5"
+                    Point3="-10,59.5" />
+                  <mssgle:LineSegment
+                    End="-10,103.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\STG_Taxi_Zones">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\STG_Taxi_Zones\Flat File Source"
+          TopLeft="537,93" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STG_Taxi_Zones\OLE DB Destination"
+          TopLeft="556,229" />
+        <EdgeLayout
+          Id="Package\STG_Taxi_Zones.Paths[Flat File Source Output]"
+          TopLeft="612.5,135">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="29,94"
+              Start="0,0"
+              End="29,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43"
+                    Point2="0,47"
+                    Point3="4,47" />
+                  <mssgle:LineSegment
+                    End="25,47" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25,47"
+                    Point2="29,47"
+                    Point3="29,51" />
+                  <mssgle:LineSegment
+                    End="29,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\STG_Yellow_Trips\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STG_Taxi_Zones\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
